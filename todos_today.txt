@@ -1,0 +1,16 @@
+what is sobject serialization
+	from source  -> byte code -> source code
+		purposes?
+			speed?
+			storage space?
+	comparison to json
+	
+	marshal vs. 
+	
+Notes for assingment turn in
+	using the json module vs the pickle module
+	
+learning a lot, but not able to effectively employ that knokwledge do produce anything other than wasted time
+
+CREATE A PROGRAM THAT STATISTICALLY ANALYZES THE TEAMS THAT IOWA STATE HAS GONE UP AGAINST TO VISUALIZE THE IDEA 
+	OF THE PROPORTIONAL OPPOSITION
