@@ -4,6 +4,14 @@ Assignment 5
 # TODO: Ensure that the assignment is turned in by the due date AND Ensure that the file that gets submitted is called 'ultimateTODO.py' (1 pt.)
 # pickle module 
 
+
+# class object with what common reprentations
+# what do I usually need a todo list to contian:
+#   time required
+#   time of the day
+#   countdown in meaningful format from current time and date to time of beginning task and time to completion
+
+
 # import applicable libraries
 import sys,pickle
 
@@ -181,3 +189,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Advanced Tasks
+#   How to inocrporate into graphical format/visual format
+
