@@ -25,4 +25,6 @@ incoroporate dictiation
 Todo list returns hypothesized amount of time required for each task based on certain criteria the
 hack the pickle module
 
-tkinter 
+learn the  tkinter module
+
+https://docs.python.org/3/library/tkinter.html
