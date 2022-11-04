@@ -28,3 +28,5 @@ hack the pickle module
 learn the  tkinter module
 
 https://docs.python.org/3/library/tkinter.html
+
+find comparable widgets to get an idea for what kind of interface you want to have
