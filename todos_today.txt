@@ -2,6 +2,7 @@ what is sobject serialization
 	from source  -> byte code -> source code
 		purposes?
 			speed?
+			
 			storage space?
 	comparison to json
 	
@@ -14,3 +15,9 @@ learning a lot, but not able to effectively employ that knokwledge do produce an
 
 CREATE A PROGRAM THAT STATISTICALLY ANALYZES THE TEAMS THAT IOWA STATE HAS GONE UP AGAINST TO VISUALIZE THE IDEA 
 	OF THE PROPORTIONAL OPPOSITION
+	
+write programs to solve math problems and physics problems
+latex problems
+
+
+find a way to sum all of the available free time to properly plan studies
