@@ -30,3 +30,22 @@ learn the  tkinter module
 https://docs.python.org/3/library/tkinter.html
 
 find comparable widgets to get an idea for what kind of interface you want to have
+
+>11NOV Tasks
+>Complete the essential concepts of the assignment in the command line
+>Plan and complete the remaining aspects incorporating the more advanced concepts
+>GUI, class and object creation
+
+>notes after 11NOV dev session
+>total number of functions: 10
+>' - initList
+>' - saveList
+>' - loadList
+>' - checkItem
+>' - addItem
+>' - deleteItem
+>' - moveItem
+>' - print TODOList
+>' - runApplication
+>' - main
+
