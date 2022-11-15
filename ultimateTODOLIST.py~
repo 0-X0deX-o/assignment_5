@@ -14,12 +14,21 @@
 
 
 import pickle, sys
+from time import sleep
+from os import system, name
+
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('cls')
+
 
 # This function initializes a todolist as a python dicitonary with 5 sub categories of a list
 def initList():
     todoList = {}
     todoList['backlog'] = []
-    todoList['todo']
+    todoList['todo'] = []
     todoList['in_progress'] = []
     todoList['in_review'] = []
     todoList['done'] = []
@@ -86,29 +95,39 @@ def deleteItem(item, todoList):
 def moveItem(item, toList, todoList):       
     itemFound, keyName, index = checkItem(item, todoList)
     if (keyName in todoList):
-    addItem(item, toList, todoList)
-    deleteItem(item, todolist)
+        addItem(item, toList, todoList)
+        deleteItem(item, todolist)
 
 def printTODOList(todoList):
-    for keys in example_dict:
-        print(f'{keys}: {example_dict[keys]}')
+    for keys in todoList:
+        print(f'{keys}: {todoList[keys]}')
 
 def runApplication(todoList):
     while True:
         print(66*'-')
         choice = input("APPLICATION MENU: [a]dd to backlog, [m]ove item, [s]ave list, or [q]uit to main menu?: ")
-        prine()
+        print()
 
         if choice == "a":
-            for keys in example_dict.keys():
-                print('Here are the categories of the list.\n\t' + keys)
+            print(66*'-')
+            print('Here are the categories of the list that you can add your item to: ')
+            print()
+
+            for keys in todoList.keys():
+                print(keys)
+            print()
+            print(66*'-')
             # create a variable from user input to be added to the list
             item = input("Enter an item to be added to a category of the list: ")
             
             # Yeah, get some input validation in there.
             toList = input("Enter the category name: ")
+            keyList = list(todoList.keys())     
+            if toList not in todoList:
+                raise Exception("Please only enter a proper key name: ")
+    
 
-            addItem(item, toList)
+            addItem(item, toList, todoList)
             printTODOList(todoList)
         
         elif choice == "m":
@@ -148,38 +167,35 @@ def main():
     print("[COM S 127 B]")
     print()
 
-while taskOver == False:
-    print(66*'-')
-    choice = input("MAIN MENU: [n]ew list, [l]oad list, or [q]uit?: ")
-    print()
+    while taskOver == False:
+        print(66*'-')
+        choice = input("MAIN MENU: [n]ew list, [l]oad list, or [q]uit?: ")
+        print()
 
-    if choice == "n":
-        todoList = initList()
-        
-        printTODOList(todoList)
-        
-        runApplication(todoList)
+        if choice == "n" or choice == "N":
+            todoList = initList()
+            printTODOList(todoList)
+            runApplication(todoList)
     
-    elif chioce == "l":
-        todoList = loadList()
+        elif choice == "l" or choice == "L":
+            todoList = loadList()
+            printTODOList(todoList)
+            runApplication(todoList)
 
-        printTODOList(todoList)
+        elif choice == "q" or choice == "Q":
+            taskOver = True
+            print("Goodbye!")
+            print()
 
-        runApplication(todoList)
-
-    elif choice == "q":
-        taskOver = True
-        print("Goodbye!")
-        print()
-
-    else:
-        print("Please enter [n], [l], or [q]...")
-        print()
+        else:
+            print("Please enter [n], [l], or [q]...")
+            print()
 
 if __name__ == "__main__":
     main()
 # Input validation for a python object
-
+# INCORPORATE A CLEAR FUNCTION TO CLEAR THE SCREEN
+# Incorporate escape keys
 
 
 # class the determines entries?
@@ -187,3 +203,6 @@ if __name__ == "__main__":
 
 # What are the specifics of a how data changes when serialized?
 # Plan to learn web assembly
+
+# incorporate main menu input validation
+
