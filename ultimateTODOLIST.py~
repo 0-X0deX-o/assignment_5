@@ -19,7 +19,7 @@ import pickle, sys
 def initList():
     todoList = {}
     todoList['backlog'] = []
-    todoList['todo']
+    todoList['todo'] = []
     todoList['in_progress'] = []
     todoList['in_review'] = []
     todoList['done'] = []
@@ -86,22 +86,23 @@ def deleteItem(item, todoList):
 def moveItem(item, toList, todoList):       
     itemFound, keyName, index = checkItem(item, todoList)
     if (keyName in todoList):
-    addItem(item, toList, todoList)
-    deleteItem(item, todolist)
+        addItem(item, toList, todoList)
+        deleteItem(item, todolist)
 
 def printTODOList(todoList):
-    for keys in example_dict:
-        print(f'{keys}: {example_dict[keys]}')
+    for keys in todoList:
+        print(f'{keys}: {todoList[keys]}')
 
 def runApplication(todoList):
     while True:
         print(66*'-')
         choice = input("APPLICATION MENU: [a]dd to backlog, [m]ove item, [s]ave list, or [q]uit to main menu?: ")
-        prine()
+        print()
 
         if choice == "a":
-            for keys in example_dict.keys():
-                print('Here are the categories of the list.\n\t' + keys)
+            print("Here are the categories of the list: ")
+            for keys in todoList.keys():
+                print(keys)
             # create a variable from user input to be added to the list
             item = input("Enter an item to be added to a category of the list: ")
             
@@ -148,33 +149,33 @@ def main():
     print("[COM S 127 B]")
     print()
 
-while taskOver == False:
-    print(66*'-')
-    choice = input("MAIN MENU: [n]ew list, [l]oad list, or [q]uit?: ")
-    print()
+    while taskOver == False:
+        print(66*'-')
+        choice = input("MAIN MENU: [n]ew list, [l]oad list, or [q]uit?: ")
+        print()
 
-    if choice == "n":
-        todoList = initList()
+        if choice == "n":
+            todoList = initList()
         
-        printTODOList(todoList)
+            printTODOList(todoList)
         
-        runApplication(todoList)
+            runApplication(todoList)
     
-    elif chioce == "l":
-        todoList = loadList()
+        elif chioce == "l":
+            todoList = loadList()
 
-        printTODOList(todoList)
+            printTODOList(todoList)
 
-        runApplication(todoList)
+            runApplication(todoList)
 
-    elif choice == "q":
-        taskOver = True
-        print("Goodbye!")
-        print()
+        elif choice == "q":
+            taskOver = True
+            print("Goodbye!")
+            print()
 
-    else:
-        print("Please enter [n], [l], or [q]...")
-        print()
+        else:
+            print("Please enter [n], [l], or [q]...")
+            print()
 
 if __name__ == "__main__":
     main()
